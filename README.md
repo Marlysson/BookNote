@@ -42,8 +42,8 @@
  3. Projeto
 	- Implementação dos DAO (Data Access Object)
 		- 1 DAO para cada entidade de classe, cada uma manuseando seus dados.
-		- ```LeitorDAO, LeituraDAO, LivroDAO, CapituloDAO, AnotacaoDAO```;
-		- 
+		- LeitorDAO, LeituraDAO, LivroDAO, CapituloDAO, AnotacaoDAO;
+
  4. Implementação
 	- Nessa fase é a parte de aplicabilidade para tornar a aplicação apresentável na plataforma _android_, usando suas apis e seus recursos.
 
