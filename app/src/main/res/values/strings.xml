@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">BookNote</string>
+
+    <string-array name="sexo">
+        <item>Masculino</item>
+        <item>Feminino</item>
+    </string-array>
+
+    <string name="title_activity_listagem_livros">Listagem de Livros</string>
+
+    <string-array name="generos">
+        <item>Ação</item>
+        <item>Romance</item>
+        <item>Comédia</item>
+        <item>Suspense</item>
+        <item>Ficção Científica</item>
+        <item>Terror</item>
+    </string-array>
+
+</resources>
