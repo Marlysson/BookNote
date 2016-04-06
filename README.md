@@ -15,12 +15,12 @@
 - Integrações
 	- Transição do modo Orientado a Objetos para o Relacional, relacionando as composições das classes com os relacionamentos entre as tabelas no banco de dados.
 
-####__Cliclo de Desenvolvimento__
- 1. Levantamento de Requisitos
+####__Ciclo de Desenvolvimento__
+1. Levantamento de Requisitos
 	 - Nessa fase foi recebido os requisitos da aplicaçao que teria que ser feita e todas as informações adicionais.
 	 ![Requisitos](Documentação/Requisitos.jpg "Requisitos")
 	 
- 2. Análise de Projeto
+2. Análise de Projeto
 	 - Nessa fase foi pensado o modo de relacionamento inicial das classes e como seria feita a implementação.
 	 - Criado os relacionamentos no banco de dados baseado no relacionamento de classes.
 	 
@@ -39,12 +39,12 @@
  - Banco : SQLite
  - Tecnologia : Mobile (Android)
 
- 3. Projeto
+3. Projeto
 	- Implementação dos DAO (Data Access Object)
 		- 1 DAO para cada entidade de classe, cada uma manuseando seus dados.
 		- LeitorDAO, LeituraDAO, LivroDAO, CapituloDAO, AnotacaoDAO;
 
- 4. Implementação
+4. Implementação
 	- Nessa fase é a parte de aplicabilidade para tornar a aplicação apresentável na plataforma _android_, usando suas apis e seus recursos.
 
 	####Recursos
