@@ -24,9 +24,14 @@
 	 - Nessa fase foi pensado o modo de relacionamento inicial das classes e como seria feita a implementação.
 	 - Criado os relacionamentos no banco de dados baseado no relacionamento de classes.
 	 
+	 - __Diagrama  de Classes__
 	 ![Diagrama  de classes](Documentação/Diagrama%20de%20Classes.png "Análise")
 	 
+	 - __Relacionamento Banco de Dados__
 	 ![Relacionamento do Banco de dados](Documentação/Modelo%20Relacional.png "Banco de dados") 
+
+	 - __Estrutura DAO__
+		![Relacionamento do Banco de dados](Documentação/Diagrama%20DAO.png "DAO") 
 
 
 #####Linguagens e Banco de dados utilizados:
@@ -35,4 +40,6 @@
  - Tecnologia : Mobile (Android)
 
  3. Projeto
+	- Implementação dos DAO (Data Access Object)
+
  4. Implementação
