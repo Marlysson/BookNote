@@ -31,8 +31,8 @@ public class LivroDAO implements DAO<Livro>{
     }
 
 
-    @Override
     public void inserir(Livro livro) {
+
         ContentValues cv = new ContentValues();
 
         cv.put("titulo", livro.getTitulo());
@@ -43,7 +43,7 @@ public class LivroDAO implements DAO<Livro>{
         cv.put("tags",livro.getGenero());
         cv.put("situacao", String.valueOf(Situacao.DESEJADO));
 
-        this.db.getWritableDatabase().insert("leitor", null, cv);
+        this.db.getWritableDatabase().insert("livro", null, cv);
 
     }
 
@@ -63,14 +63,6 @@ public class LivroDAO implements DAO<Livro>{
         SQLiteDatabase query = this.db.getReadableDatabase();
 
         Cursor dados = query.rawQuery(sql,null);
-
-//
-//        while(dados.moveToNext()){
-//
-//            int id = dados.getInt(dados.getColumnIndex("id"));
-//            String titulo = dados.getString(dados.getColumnIndex("titulo"));
-//            String situacao = dados.getString(dados.getColumnIndex("situacao"));
-//        }
-        return null;
+      return null;
     }
 }

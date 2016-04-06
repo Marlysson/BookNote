@@ -9,7 +9,7 @@ import java.util.List;
 
 public class DBHelper extends SQLiteOpenHelper{
 
-    private final static String DBNAME = "AppLeituras.db";
+    private final static String DBNAME = "app.db";
     private final static int VERSION = 1;
 
     private String leitor = "CREATE TABLE IF NOT EXISTS\n" +

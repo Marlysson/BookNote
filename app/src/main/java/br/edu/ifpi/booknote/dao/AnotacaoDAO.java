@@ -10,5 +10,34 @@ CREATE TABLE IF NOT EXISTS
     paginaFinal INT);
 */
 
-public class AnotacaoDAO {
+import java.util.List;
+
+import br.edu.ifpi.booknote.modelo.Anotacao;
+
+public class AnotacaoDAO implements DAO<Anotacao>{
+
+    private DBHelper db;
+
+    public AnotacaoDAO(DBHelper db){
+        this.db = db;
+    }
+
+    @Override
+    public void deletar(Anotacao anotacao) {
+
+        String[] args = {String.valueOf(anotacao.getId())};
+
+        this.db.getWritableDatabase().delete("anotacao", "id = ?", args);
+
+    }
+
+    @Override
+    public Anotacao getById(int p) {
+        return null;
+    }
+
+    @Override
+    public List<Anotacao> getAll() {
+        return null;
+    }
 }

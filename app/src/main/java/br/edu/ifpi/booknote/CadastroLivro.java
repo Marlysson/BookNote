@@ -4,10 +4,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
+
+import java.util.Arrays;
+import java.util.List;
 
 import br.edu.ifpi.booknote.dao.DBHelper;
 import br.edu.ifpi.booknote.dao.LivroDAO;
@@ -27,49 +29,53 @@ public class CadastroLivro extends AppCompatActivity {
 
     public void cadastrarLivro(View view){
 
-        Button botao = (Button)findViewById(R.id.cadastrar);
+        EditText editTitulo = (EditText)findViewById(R.id.titulo);
+        EditText editAutor = (EditText)findViewById(R.id.autor);
+        Spinner editGenero = (Spinner)findViewById(R.id.genero);
+        EditText editAno = (EditText)findViewById(R.id.ano);
+        EditText editquantCap = (EditText)findViewById(R.id.quantCapitulos);
+        EditText editTags = (EditText)findViewById(R.id.tags);
 
-        botao.setOnClickListener(new View.OnClickListener() {
+        if (this.vazio(Arrays.asList(editTitulo,editAutor,editAutor,editGenero,editAno,editquantCap,editTags))){
 
-            EditText editTitulo = (EditText)findViewById(R.id.titulo);
-            EditText editAutor = (EditText)findViewById(R.id.autor);
-            Spinner editGenero = (Spinner)findViewById(R.id.genero);
-            EditText editAno = (EditText)findViewById(R.id.ano);
-            EditText editquantCap = (EditText)findViewById(R.id.quantCapitulos);
-            EditText editTags = (EditText)findViewById(R.id.tags);
+            Toast.makeText(CadastroLivro.this, "Preencha todos os campos", Toast.LENGTH_SHORT).show();
+
+        }else{
 
             String titulo = editTitulo.getText().toString();
             String autor  = editAutor.getText().toString();
             String genero = editGenero.getSelectedItem().toString();
-            int ano = Integer.parseInt(editAno.getText().toString());
-            int quantCapitulo = Integer.parseInt(editquantCap.getText().toString());
+            String ano      = editAno.getText().toString();
+            String quantCapitulo = editquantCap.toString();
             String tags   = editTags.getText().toString();
 
-            @Override
-            public void onClick(View v) {
-
-                if (titulo.isEmpty() || autor.isEmpty() || genero.isEmpty() || ano < 0 || quantCapitulo < 0 || tags.isEmpty()){
-
-                    Toast.makeText(CadastroLivro.this, "Preencha todos os campos", Toast.LENGTH_SHORT).show();
-
-                }else{
-
-                    Livro livro = new Livro(titulo,autor,ano);
-                    livro.setGenero(genero);
-                    livro.setQuantCapitulos(quantCapitulo);
-
-                    for(String tag : tags.split(",")){
-                        livro.addTag(tag);
-                    }
-
-                    livroDAO.inserir(livro);
-
-                    Toast.makeText(CadastroLivro.this, livro.getTitulo() + " inserido com sucesso.", Toast.LENGTH_SHORT).show();
-
-                    Intent listagem = new Intent(CadastroLivro.this,ListagemLivros.class);
-                    startActivity(listagem);
-                }
+            Livro livro = new Livro(titulo,autor,Integer.valueOf(ano));
+            livro.setGenero(genero);
+            livro.setQuantCapitulos(Integer.valueOf(quantCapitulo));
+            
+            for(String tag : tags.split(",")){
+                 livro.addTag(tag);
             }
-        });
+
+            livroDAO.inserir(livro);
+
+            Toast.makeText(CadastroLivro.this, titulo + " inserido com sucesso.", Toast.LENGTH_SHORT).show();
+
+            Intent listagem = new Intent(CadastroLivro.this,ListagemLivros.class);
+            startActivity(listagem);
+            finish();
+        }
     }
+
+    private boolean vazio(List<View> l){
+
+        for(View v : l){
+            if (v.toString().length() == 0){
+                return true;
+            }
+        }
+
+        return false;
+    }
+
 }

@@ -76,7 +76,6 @@ public class CadastroInicial extends AppCompatActivity {
 
         if (nome.isEmpty() || idade < 0 || sexo.isEmpty()){
             Toast.makeText(CadastroInicial.this, "Preencha os campos", Toast.LENGTH_SHORT).show();
-
         }else{
 
             Leitor leitor = new Leitor(nome, idade,sexo);

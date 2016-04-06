@@ -19,7 +19,6 @@ import br.edu.ifpi.booknote.modelo.Leitor;
 
 public class LeitorDAO implements DAO<Leitor> {
 
-    private final static int VERSAO = 1;
     private DBHelper db;
 
     public LeitorDAO(DBHelper db) {
