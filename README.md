@@ -1,4 +1,4 @@
-##Aplicativo de leituras "_feito_" em Android.
+##Aplicativo de leituras feito em Android.
 
 #### Nome: __BookNote__
 
